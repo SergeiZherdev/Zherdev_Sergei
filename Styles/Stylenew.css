@@ -29,11 +29,7 @@ body{
     width: 20%;
     margin: 20px;
 }
-/*table{
-    height: auto;
-    width: 800px;
-}
-.table, tr, td{
+.table, tr, td {
     border: 1px solid black;
     text-align: center;
-}*/
+}
