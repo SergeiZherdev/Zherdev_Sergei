@@ -1,3 +1,18 @@
+<?
+date_default_timezone_set('Asia/Yekaterinburg');
+$time = date("H:i:s");
+echo $time;
+if ($time >= 0 && $time < 8){
+    echo ('<body style="background-color: darkslategray">');
+}
+elseif ($time >= 22 && $time < 24){
+    echo ('<body style="background-color: darkslategray">');
+}
+else {
+    echo('<body style="background-color: aquamarine">');
+}
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
