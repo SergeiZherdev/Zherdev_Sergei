@@ -1,0 +1,12 @@
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    margin: 100px;
+    align-items: center;
+}
+h5{
+    padding: 10px;
+}
+h3{
+    padding: 10px;
+}

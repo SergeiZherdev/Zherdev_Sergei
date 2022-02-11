@@ -22,12 +22,7 @@ else {
 </head>
 <body>
       <header class="header">
-        <div>
-            <img src="Images/head.png" alt="Нет фото" width="60" height="60">
-        </div>
-          <div>
-              <a href="table.html"><img src="Images/Mendeleev.jpg" alt="Упс" width="60" height="60" title="Таблица Менделеева"></a>
-          </div>
+      <? require_once 'header.php';?>
     </header>
       <main>
       <!-- <div class="foto"></div>
@@ -97,5 +92,8 @@ else {
           </div>
       </section>
       </main>
+<footer>
+    <? require_once 'footer.php';?>
+</footer>
 </body>
 </html>

@@ -4,6 +4,9 @@ body{
 .header{
     display: flex;
 }
+.footer{
+    display: flex;
+}
 /*.foto{
     background-image: url("../Images/foto1.jpg");
     background-size: cover;
