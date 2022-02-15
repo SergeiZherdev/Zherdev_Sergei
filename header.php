@@ -19,6 +19,9 @@
         <div>
             <a href="lesson3_4.php"><img src="Images/lesson.png" alt="Упс" width="60" height="60" title="Задание"></a>
         </div>
+        <div>
+            <a href="lesson9_10.php"><img src="Images/lesson.png" alt="Упс" width="60" height="60" title="Задание 9_10"></a>
+        </div>
     </header>
 </body>
 </html>

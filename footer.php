@@ -10,26 +10,42 @@
 </head>
 <body>
 <?
-$glas = ['H','а','у','о','и','э','ы','А','У','О','И','Э','Ы'];
-$site1 =file_get_contents("homework.php",);
-$site = mb_str_split($site1);
+$glas = ['а','у','о','и','э','ы','А','У','О','И','Э','Ы'];
+$site1 ='На данный момент работаю на ПАО "ММК", в должности мастера участка. Закончил МГТУ им. Носова по специальности "Промышленная электроника". Люблю активные виды спорта (футбол, баскетбол и т.д.), люблю кататься на горных лыжах, ну и просто проводить время в кругу семьи и друзей. Очень рад что попал на дынный курс. Все нравится, все очень интересно.';
+
 $n=0;
-foreach ($site as $value){
-    if(in_array($value,$glas))
-    {$n ++;
+function str($glas,$site1, $n)
+{
+    $site = mb_str_split($site1);
+    foreach ($site as $value) {
+        if (in_array($value, $glas)) {
+            $n++;
+        }
     }
+    echo "Количество гласных на странице: $n", '<br>';
 }
-echo "Количество гласных на странице: $n", '<br>';
-echo "Количество слов на странице:", str_word_count($site1);
+str($glas, $site1, $n);
+
+function str2($site1){
+    $site2= explode(' ', $site1);
+    $n1= count($site2);
+    echo "Количество слов на странице:", $n1;
+}
+str2($site1);
+
+echo '<br>';
 echo '<br>';
 $date1 = "24.06.1987";
 $date2=date("d.m.Y");
 echo "Дата рождения:", $date1,'<br>';
 echo "Текущая дата:", $date2,'<br>';
-$date3 = strtotime($date1);
-$date4 = strtotime($date2);
-$date5 = $date4-$date3;
-echo "Количество дней между датами:", floor($date5 / (60 * 60 * 24));
+function data($date1,$date2){
+    $date3 = strtotime($date1);
+    $date4 = strtotime($date2);
+    $date5 = $date4 - $date3;
+    echo "Количество дней между датами:", floor($date5 / (60 * 60 * 24));
+}
+data($date1,$date2);
 ?>
 
     <footer class="footer">

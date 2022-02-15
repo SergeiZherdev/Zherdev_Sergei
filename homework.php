@@ -2,12 +2,15 @@
 date_default_timezone_set('Asia/Yekaterinburg');
 $time = date("H:i:s");
 echo $time;
-if ($time >= 8 && $time < 23){
-    echo ('<body style="background-color: aquamarine">');
+function t($time)
+{
+    if ($time >= 8 && $time < 23) {
+        echo('<body style="background-color: aquamarine">');
+    } else {
+        echo('<body style="background-color: darkslategray">');
+    }
 }
-else {
-    echo('<body style="background-color: darkslategray">');
-}
+t($time);
 ?>
 
 <!doctype html>
@@ -53,24 +56,32 @@ else {
                       <div class="Info_1_1">
                           <?
                           $str='На данный момент работаю на ПАО "ММК", в должности мастера участка. Закончил МГТУ им. Носова по специальности "Промышленная электроника". Люблю активные виды спорта (футбол, баскетбол и т.д.), люблю кататься на горных лыжах, ну и просто проводить время в кругу семьи и друзей';
-                            $str1 = mb_substr($str, 0,37);
-                            $str2 = mb_substr($str, 37);
-                            echo '<span style="color: red">'.$str1.'</span>',$str2;
+                          function str1($str)
+                          {
+                              $str1 = mb_substr($str, 0, 37);
+                              $str2 = mb_substr($str, 37);
+                              echo '<span style="color: red">' . $str1 . '</span>', $str2;
+                          }
+                          str1($str);
                           ?>
                           </div>
                       <div class="like">
                           <?
                           $str3= 'Очень рад что попал на дынный курс. Все нравится, все очень интересно.';
-                          $arr1= explode(' ',$str3);
                           $n = 1;
-                          foreach($arr1 as $value){
-                              if(($n % 2) == 0){
-                                  echo '<span style="color: blue">'.$value.' '.'</span>';
-                              }else{
-                                  echo '<span style="color:darkorange">' .$value.' '.'</span>';
+                          function str3($str3 , $n)
+                          {
+                              $arr1 = explode(' ', $str3);
+                              foreach ($arr1 as $value) {
+                                  if (($n % 2) == 0) {
+                                      echo '<span style="color: blue">' . $value . ' ' . '</span>';
+                                  } else {
+                                      echo '<span style="color:darkorange">' . $value . ' ' . '</span>';
+                                  }
+                                  $n++;
                               }
-                              $n ++;
                           }
+                          str3($str3,$n);
                           ?>
                           </div>
                   </div>
