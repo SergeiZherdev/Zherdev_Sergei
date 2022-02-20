@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $logins=['Сергей','Admin'];
 $passwords=['a01610228fe998f515a72dd730294d87','e3afed0047b08059d0fada10f400c1e5'];//1212 , Admin
@@ -12,11 +13,48 @@ if(!empty($_POST)) {
         $auth = false;
 
     if ($auth) {
-        require('homework.php');
+        echo $_POST['login'],", добро пожаловать!";
+        header('Refresh:3; authorization.php');
+        //require('homework.php');
     } else echo "Введены некорректные данные, попробуйте еще раз".'<br>';
+        header('Refresh:3; authorization.php');
     //print_r($_POST);
+
+}
+setcookie('login',$login, time()+3600*7*24);
+
+if(count($_POST)>0){
+    if($_POST['login']=='Сергей' || $_POST['password']=='a01610228fe998f515a72dd730294d87'){
+        if(isset($_SESSION["page"])){
+            foreach($_SESSION["page"] as $value)
+            {
+                echo $value;
+            }
+            exit;
+        }
+    }
+    if($_POST['login']=='Admin' || $_POST['password']=='e3afed0047b08059d0fada10f400c1e5'){
+        if(isset($_SESSION["page"])){
+            foreach($_SESSION["page"] as $value)
+            {
+                echo $value;
+            }
+            exit;
+        }
+    }
+}
+else
+{
+    if (isset($_SESSION['page']))
+    {
+        foreach($_SESSION["page"] as $value)
+        {
+            echo $_COOKIE['login'], $value;
+        }
+    }
 }
 
+//session_destroy()
 ?>
 
 
@@ -46,6 +84,13 @@ if(!empty($_POST)) {
     <p>
         <button type="submit">Ок</button>
     </p>
+</form>
+<div>
+    <a href="FACT.php">Факт</a>
+   </div>
+<div>
+    <a href="BITRIX.php">BITRIX</a>
+</div>
 </form>
 </body>
 </html>

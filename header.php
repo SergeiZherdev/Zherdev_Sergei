@@ -9,11 +9,12 @@
     <title>Document</title>
 </head>
 <body>
-<div>
-    <a href="authorization.php"> Авторизация</a>
-</div>
+
 <br>
     <header class="header">
+        <div>
+            <a href="authorization.php"><img src="Images/Vhod.jpg" alt="Упс" width="60" height="60" title="Авторизация"</a>
+        </div>
         <div>
             <a href="homework.php"><img src="Images/head.png" alt="Упс" width="60" height="60" title="Сайт"></a>
         </div>
@@ -28,6 +29,9 @@
         </div>
         <div>
             <a href="Task16.02.php"><img src="Images/task1.png" alt="Упс" width="60" height="60" title="Task 16.02"></a>
+        </div>
+        <div>
+            <a href="Task18.02.php"><img src="Images/task1.png" alt="Упс" width="60" height="60" title="Task 18.02"></a>
         </div>
     </header>
 </body>
