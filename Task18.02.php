@@ -1,6 +1,4 @@
-
 <?php
-
 $color = $_POST['color'];
 setcookie('color',$color, time()+3600*7*24);
 if($_COOKIE["color"] == 1){
@@ -21,9 +19,7 @@ echo time() - $_SESSION['time'];
 echo '<br>';
 $_SESSION['time2']=date('h:i:s');
 echo $_SESSION['time2'];
-
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
