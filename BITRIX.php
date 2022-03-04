@@ -20,5 +20,6 @@ $_SESSION["page"][]=$index2;
 </div>
 <div>
     <a href="authorization.php">Страница авторизации</a>
+    </div>
 </body>
 </html>

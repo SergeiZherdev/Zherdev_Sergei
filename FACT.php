@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 $index=" В последний раз ты был на FACT";
 $_SESSION["page"]=array();
@@ -20,5 +20,6 @@ $_SESSION["page"][]=$index;
 </div>
 <div>
     <a href="authorization.php">Страница авторизации</a>
+</div>
 </body>
 </html>
