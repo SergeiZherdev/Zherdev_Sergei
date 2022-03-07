@@ -1,26 +1,15 @@
 <?php
 require_once 'connect.php';
-$db = new connect('localhost','Serg',1,'Auth');
-$db_con=mysqli_connect();
-
-if (!empty($_POST['password']) and !empty($_POST['login'])) {
-    $login = $_POST['login'];
-    $password1 = $_POST['password'];
-    $query = "SELECT `Login`, `Password` FROM `Users` WHERE `Login` = '$login'";
-    $result = mysqli_query($db_con,$query);
-    $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    if ($user['0']['Password'] === md5($_POST['password'])) {
-        echo $_POST['login'], ", добро пожаловать!";
-    } else {
-        echo "Вы ввели неправильный логин/пароль";
-    }
-}
+require_once 'Dat.php';
+/*$hostname = 'localhost';
+$username = 'Serg';
+$password = 1;
+$dbname = 'Auth';*/
+$log= new connect($hostname, $username,$password,$dbname);
+$result= $log->auth($_POST["login"], $_POST["password"]);
 
 
-
-
-
-/*session_start();
+/*
 $hostname= 'localhost';
 $username= 'Serg';
 $password= '1';
